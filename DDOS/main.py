@@ -3,6 +3,7 @@
 import socket
 import threading
 
+print("\n\n\n Dont try this on eduserver or nitc.ac.in please :) \n\n\n ")
 target = str(input("Target IP : "))
 port = input("port : ")
 host= str(input("Host IP : ")) 
