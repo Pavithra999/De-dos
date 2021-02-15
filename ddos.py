@@ -1,4 +1,5 @@
 #just in case you are using it for eduserver or something please dont
+#eduserver IP address = 103.241.136.151
 
 import socket
 import threading
